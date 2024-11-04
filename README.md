@@ -12,5 +12,6 @@ Responsive Design
 Figma
 
 ## Deployment
--Webpage is deployed to GitHub Pages
+-Webpage is deployed to GitHub Pages:
+ https://jhouse233.github.io/se_project_spots/
 
