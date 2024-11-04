@@ -17,11 +17,6 @@
   font-size: 20px;
   line-height: 1.24;
   color: rgba(33, 33, 33, 1);
-  text-overflow: ellipsis;
-  overflow: hidden;
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
 }
 
 .card__like-button {
