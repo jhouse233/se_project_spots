@@ -15,3 +15,5 @@ Figma
 -Webpage is deployed to GitHub Pages:
  https://jhouse233.github.io/se_project_spots/
 
+-VIDEO
+https://drive.google.com/file/d/1HT9kSPsU8dBwKFcwGXpD-dx8flAi09GQ/view?usp=drive_link
