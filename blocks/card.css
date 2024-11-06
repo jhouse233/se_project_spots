@@ -48,16 +48,30 @@
   cursor: pointer;
 }
 
-@media screen and (max-width: 627px) {
+@media screen and (max-width: 320px) {
   .card__image {
+    width: 100%;
+    max-width: 288px;
     height: 288px;
   }
 
-  .card__description {
+  .card__title {
     font-size: 16px;
+    line-height: 1;
   }
 
   .card__title {
-    max-width: 250px;
+    font-size: 16px;
+    max-width: 288px;
+    line-height: 1;
+  }
+
+  .card__list {
+    gap: 10px;
+  }
+
+  .card__like-button {
+    width: 20px;
+    height: 18px;
   }
 }
