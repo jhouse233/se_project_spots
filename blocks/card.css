@@ -7,6 +7,23 @@
   width: 413px;
   object-fit: cover;
   display: block;
+  margin-bottom: 12px;
+  border-radius: 8px;
+}
+
+.card__title {
+  font-family: "Poppins", Arial, Helvetica, sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
+  font-size: 20px;
+  margin: 0;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  max-width: 420px;
 }
 
 .card__content {
@@ -20,7 +37,7 @@
 }
 
 .card__like-button {
-  background-image: url(../images/Like_icon.svg);
+  background-image: url(../images/like_icon2.svg);
   height: 20px;
   width: 23px;
   border: none;
@@ -36,5 +53,9 @@
 @media screen and (max-width: 627px) {
   .card__image {
     height: 288px;
+  }
+
+  .card__description {
+    font-size: 16px;
   }
 }
