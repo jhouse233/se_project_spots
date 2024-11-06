@@ -43,11 +43,10 @@
 
 
 .profile__edit-btn {
-  margin-bottom: auto;
+  margin-top: auto;
   margin-right: auto;
   opacity: 0.7;
   color: rgb(33, 33, 33);
-  width: 108;
   background-color: #FCF5E5;
   border: none;
   padding: 8px 0 0;
