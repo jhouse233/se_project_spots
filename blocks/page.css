@@ -1,9 +1,10 @@
 .page {
   background-color: #fcf5e5;
   font-family: Poppins, Arial, Helvetica, sans-serif;
-  max-width: 100vw;
+  max-width: 100%;
   padding: 0 10px;
   box-sizing: border-box;
+  background-size: cover;
 }
 
 .page__section {
@@ -12,9 +13,9 @@
   margin: 0 auto;
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 521px) {
   .page__section {
-    max-width: 100vw;
+    max-width: 100%;
     padding: 0 10px;
     box-sizing: border-box;
   }
