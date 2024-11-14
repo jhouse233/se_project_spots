@@ -13,7 +13,7 @@
 }
 
 
-@media screen and (max-width: 521px) {
+@media screen and (max-width: 320px) {
   .cards__list{
     grid-template-columns: 1fr;
     gap: 10px;

@@ -1,5 +1,6 @@
 .card {
-  max-width: 413px;
+  /* max-width: 413px; */
+  max-width: 100%;
 }
 
 .card__image {
@@ -48,7 +49,7 @@
   cursor: pointer;
 }
 
-@media screen and (max-width: 521px) {
+@media screen and (max-width: 320px) {
   .card__image {
     width: 100%;
     max-width: 288px;

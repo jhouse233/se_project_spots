@@ -4,6 +4,7 @@
   padding: 34px 0 20px;
   border-bottom: 1px rgba(33, 33, 33, 0.4) solid;
   max-width: 1280px;
+  /* width: 100%; */
   /* max-width: 100%; */
 }
 
@@ -79,7 +80,7 @@
 }
 
 
-@media screen and (max-width: 521px) {
+@media screen and (max-width: 700px) {
   .profile {
     flex-direction: column;
     max-width: 100%;
