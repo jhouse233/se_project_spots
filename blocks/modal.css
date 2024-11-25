@@ -85,6 +85,10 @@
   border-color: rgba(33,33,33,0.4);
 }
 
+.modal__form {
+
+}
+
 
 @media screen and (max-width: 320px) {
   .modal {
