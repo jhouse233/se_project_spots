@@ -29,11 +29,14 @@ function getCardElement(data){
     .cloneNode(true);
 
   const cardNameEl = cardElement.querySelector(".card__title");
-  // select the image element
-  const cardImageEl = cardElement.querySelector(".card__image");
+
+  const cardImage = cardElement.querySelector(".card__image");
 
   cardNameEl.textContent = data.name;
-  // Asign values to the image SRC and ALT
+
+  cardImage.src = data.link;
+  cardImage.alt = data.name;
+
   return cardElement;
 }
 
@@ -62,5 +65,5 @@ editFormElement.addEventListener("submit", handleEditFormSubmit);
 
 for (let i = 0; i < initialCards.length; i++) {
   const cardElement = getCardElement(initialCards[i]);
-  cardsList.prepend(cardElement);
+  cardsList.append(cardElement);
 }
