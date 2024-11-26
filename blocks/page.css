@@ -1,8 +1,8 @@
 .page {
   background-color: #fcf5e5;
   font-family: Poppins, Arial, Helvetica, sans-serif;
-  max-width: 100%;
-  /* max-width: 1400px; */
+  /* max-width: 100%; */
+  max-width: 1440px;
   padding: 0 10px;
   box-sizing: border-box;
   background-size: cover;
