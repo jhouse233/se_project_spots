@@ -2,6 +2,7 @@
   background-color: #fcf5e5;
   font-family: Poppins, Arial, Helvetica, sans-serif;
   max-width: 100%;
+  /* max-width: 1400px; */
   padding: 0 10px;
   box-sizing: border-box;
   background-size: cover;
@@ -14,6 +15,10 @@
 }
 
 @media screen and (max-width: 320px) {
+  .page{
+    max-width: 100%;
+  }
+
   .page__section {
     max-width: 100%;
     padding: 0 10px;

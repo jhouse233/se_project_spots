@@ -70,7 +70,7 @@
 
   .card__list {
     gap: 10px;
-    grid-template-columns: 1fr;
+    grid-template-columns: 100%;
   }
 
   .card__like-button {

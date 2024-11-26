@@ -15,7 +15,7 @@
 
 @media screen and (max-width: 320px) {
   .cards__list{
-    grid-template-columns: 1fr;
+    grid-template-columns: 100%;
     gap: 10px;
   }
 
