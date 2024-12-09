@@ -10,13 +10,13 @@
   justify-content: center;
   visibility: hidden;
   padding: 0 16px;
-  transition: visibility 0.5s ease-in-out, opacity 0.5s ease-in-out;
+  transition: visibility 0.3s, opacity 0.3s ease-in;
 }
 
 .modal_opened {
   visibility: visible;
   opacity: 1;
-  transition: visibility 0s ease-in-out 0s, opacity 0.5s ease-in-out;
+  transition: visibility 0.3s, opacity 0.3s ease-in;
 }
 
 .modal__container {
@@ -150,6 +150,7 @@
 @media screen and (max-width: 320px) {
   .modal {
     padding: 0 10px;
+    transition: visibility 0.3s, opacity 0.3s ease-in;
   }
 
   .modal__container {
