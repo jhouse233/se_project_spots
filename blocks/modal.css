@@ -10,10 +10,13 @@
   justify-content: center;
   visibility: hidden;
   padding: 0 16px;
+  transition: visibility 0.5s ease-in-out, opacity 0.5s ease-in-out;
 }
 
 .modal_opened {
   visibility: visible;
+  opacity: 1;
+  transition: visibility 0s ease-in-out 0s, opacity 0.5s ease-in-out;
 }
 
 .modal__container {
@@ -27,12 +30,49 @@
   border-radius: 8px;
 }
 
+.modal__container_type_preview {
+  padding: 0;
+  width: fit-content;
+  height: fit-content;
+  max-width: 100vh;
+  max-height: 100vh;
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.modal__image {
+  width: 100%;
+  border-radius: 8px;
+  object-fit: contain;
+  max-width: 80vw;
+  max-height: 80vh;
+}
+
+
+
 .modal__close-button {
   position: absolute;
   top: 32px;
   right: 50px;
   width: 40px;
   height: 40px;
+}
+
+.modal__caption {
+  color: #fff;
+  background-color: #212121;
+  display: inline-block;
+  font-size: 20px;
+  line-height: 1.2;
+  margin: 8px 0 0;
+  padding: 4px 8px;
+  border-radius: 8px;
+  align-self: flex-start;
 }
 
 .modal__title {
@@ -72,6 +112,23 @@
   background-color: rgba(255, 255, 255, 1);
 }
 
+.modal__close-button_type_preview {
+  background: transparent url(../images/Close_Icon.svg) no-repeat center;
+  opacity: 0.4;
+  top: 0;
+  right: -52.5px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  position: absolute;
+  border: none;
+}
+
+.modal__close-button_type_preview:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+
 .modal__close-button:hover {
   opacity: 1;
   cursor: pointer;
@@ -99,6 +156,11 @@
     padding: 12px;
   }
 
+  modal__container_type_preview {
+    max-width: 288px;
+    padding: 0;
+  }
+
   .modal__title {
     font-size: 20px;
     margin: 10px 0 34px;
@@ -111,6 +173,11 @@
 
   .modal__label {
     margin-bottom: 24px;
+  }
+
+  .modal__close-button_type_preview{
+    top: -48px;
+    right: 0;
   }
 
   .modal__submit-button {
