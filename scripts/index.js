@@ -60,7 +60,6 @@ function getCardElement(data){
   });
 
   cardDeleteButton.addEventListener("click", () => {
-    const card = cardDeleteButton.closest(".card");
     cardElement.remove();
   });
 
@@ -147,6 +146,6 @@ previewModal.addEventListener("click", () => {
 
 closeButtons.forEach((button) => {
   const popup = button.closest(".modal");
-  button.addEventListener("click", () => closePopup(popup))
+  button.addEventListener("click", () => closeModal(popup))
 });
 
