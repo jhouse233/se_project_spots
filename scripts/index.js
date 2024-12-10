@@ -16,13 +16,13 @@ const profileDescription = document.querySelector(".profile__description");
 
 // Form Elements
 const editProfileModal = document.querySelector("#edit-profile-modal");
-const editFormElement = editProfileModal.querySelector(".modal__form");
+const editFormElement = document.forms["edit-profile"];
 const editModalCloseButton = editProfileModal.querySelector(".modal__close-button");
 const editModalNameInput = editProfileModal.querySelector("#profile-name-input")
 const editModalDescriptionInput = editProfileModal.querySelector("#profile-description-input");
 
 const cardModal = document.querySelector("#add-card-modal");
-const cardForm = cardModal.querySelector(".modal__form");
+const cardForm = document.forms["add-card-form"];
 const cardModalCloseButton = cardModal.querySelector(".modal__close-button");
 const cardNameInput = cardModal.querySelector("#add-card-name-input")
 const cardLinkInput = cardModal.querySelector("#add-card-link-input")
