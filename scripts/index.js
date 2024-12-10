@@ -124,24 +124,9 @@ editFormElement.addEventListener("submit", handleEditFormSubmit);
 cardForm.addEventListener("submit", handleAddCardSubmit);
 
 
-editModalCloseButton.addEventListener("click", () => {
-  closeModal(editProfileModal);
-});
-
-
 cardModalButton.addEventListener("click", () => {
   openModal(cardModal);
 });
-
-cardModalCloseButton.addEventListener("click", () => {
-  closeModal(cardModal);
-});
-
-previewModal.addEventListener("click", () => {
-  closeModal(previewModal)
-})
-
-
 
 
 closeButtons.forEach((button) => {

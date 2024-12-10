@@ -82,6 +82,7 @@
     width: 100%;
     max-width: 288px;
     height: 288px;
+    margin: auto;
   }
 
   .card__title {
