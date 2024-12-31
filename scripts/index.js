@@ -39,6 +39,9 @@ const cardsList = document.querySelector(".cards__list");
 const closeButtons = document.querySelectorAll(".modal__close-button");
 const overlays = document.querySelectorAll(".modal");
 
+// Button
+const newPostSubmitButton = cardModal.querySelector(".modal__submit-button");
+
 
 // Connects the individual parts of the card elements to the template
 function getCardElement(data){
@@ -109,6 +112,7 @@ function handleAddCardSubmit(evt) {
   };
   renderCard(inputValues);
   evt.target.reset();
+  disableButton(newPostSubmitButton, settings);
   closeModal(cardModal);
 }
 
@@ -116,6 +120,7 @@ function handleAddCardSubmit(evt) {
 profileEditButton.addEventListener("click", () => {
   editModalNameInput.value = profileName.textContent;
   editModalDescriptionInput.value = profileDescription.textContent;
+  resetValidation(editFormElement, [editModalNameInput, editModalDescriptionInput], settings)
   openModal(editProfileModal);
 });
 
@@ -133,4 +138,6 @@ closeButtons.forEach((button) => {
   const popup = button.closest(".modal");
   button.addEventListener("click", () => closeModal(popup))
 });
+
+enableValidation(settings);
 
