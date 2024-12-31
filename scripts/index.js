@@ -89,11 +89,32 @@ function renderCard(item, method = "prepend") {
 // Open Modal
 function openModal(modal) {
   modal.classList.add("modal_opened");
+  document.addEventListener("keydown", handleEscapeKey);
 }
 // Close Modal
 function closeModal(modal) {
   modal.classList.remove("modal_opened");
+  document.removeEventListener("keydown", handleEscapeKey);
 }
+
+// Escape Key Close
+function handleEscapeKey(evt) {
+  if (evt.key === "Escape") {
+    const currentModal = document.querySelector(".modal_opened");
+    if (currentModal) {
+      closeModal(currentModal);
+    }
+  }
+}
+
+// Iterate over modal overlay to add click outside of content
+overlays.forEach((modal) => {
+  modal.addEventListener("click", (evt) => {
+    if (evt.target === modal && modal.classList.contains("modal_opened")) {
+      closeModal(modal);
+    }
+  });
+});
 
 // Edit Profile
 function handleEditFormSubmit(evt) {

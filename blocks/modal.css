@@ -114,7 +114,7 @@
   cursor: pointer;
 }
 
-.modal__sumbit-button_disabled {
+.modal__submit-button_disabled {
   opacity: 0.5;
 }
 
