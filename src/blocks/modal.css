@@ -146,6 +146,32 @@
   opacity: 1;
   cursor: pointer;
 }
+
+.modal__form-delete {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 32px;
+}
+
+.modal__delete-button {
+  background-color: #ff6565;
+  border: none;
+  color: #212121;
+  border-radius: 8px;
+}
+
+.modal__cancel-button {
+  background: white;
+  border: 1px solid #212121;
+  color: #212121;
+  border-radius: 8px;
+}
+
+
+
+
+
 .modal__input {
   margin: 8px 0 0;
   padding: 16px 12px;
@@ -186,9 +212,14 @@
     padding: 12px;
   }
 
-  modal__container_type_preview {
+  .modal__container_type_preview {
     max-width: 288px;
     padding: 0;
+  }
+
+  .modal__close-button_type_preview {
+    top: -35px;
+    right: 20px;
   }
 
   .modal__image {
