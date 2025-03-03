@@ -77,6 +77,7 @@ class Api {
   }
 
 
+
   deleteCard(id) {
     return fetch(`${this._baseUrl}/cards/${id}`, {
       method: "DELETE",
@@ -96,6 +97,10 @@ class Api {
       return Promise.reject(`Error: ${res.status}`);
     });
   }
+
 }
+
+
+
 
 export default Api;

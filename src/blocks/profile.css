@@ -135,6 +135,13 @@
     visibility: visible;
   }
 
+  .profile__avatar-button-logo {
+    display: block;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+  }
+
   .profile__avatar-btn::after {
     content: "";
   }
