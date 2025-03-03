@@ -57,6 +57,12 @@ export const toggleButtonState = (inputList, buttonElement, config) => {
 };
 
 // export const disableButton = (buttonElement, config) => {
+//   if (buttonElement) {
+//     buttonElement.disabled = true;
+//     buttonElement.classList.add(config.inactiveButtonClass)
+//   }
+// }
+
 //   buttonElement.disabled = true;
 //   buttonElement.classList.add(config.inactiveButtonClass);
 // }
@@ -102,4 +108,4 @@ export const enableValidation = (config) => {
   });
 };
 
-enableValidation(settings);
+// enableValidation(settings);

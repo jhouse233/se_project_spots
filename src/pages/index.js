@@ -1,7 +1,7 @@
 import { enableValidation, settings, resetValidation, disableButton } from "../scripts/validation.js";
 import "./index.css";
 import Api from "../utils/Api.js";
-import { handleSubmit } from "../utils/helpers.js";
+import { handleSubmit, renderLoading } from "../utils/helpers.js";
 
 
 const initialCards = [
@@ -77,11 +77,17 @@ api.getAppInfo()
     cards.forEach((item) => {
       renderCard(item);
     });
-      profileName.textContent = userInfo.name;
-      profileDescription.textContent = userInfo.about;
-      // profileImage.src = userInfo.avatar;
-    })
-    .catch(console.error);
+    profileName.textContent = userInfo.name;
+    profileDescription.textContent = userInfo.about;
+    // profileImage.src = userInfo.avatar;
+
+    // if (userInfo.avatar) {
+    //   profileImage.src = userInfo.avatar;
+    // } else {
+    //   profileImage.src = "../src/images/avatar.jpg";
+    // }
+  })
+  .catch(console.error);
 
 
 // api
@@ -218,6 +224,7 @@ function addAvatarReq(){
     })
 
 }
+
 // - - - - - - - -- - - - - - - -
 
 // Delete - - - - - - - - -
@@ -256,7 +263,7 @@ profileEditButton.addEventListener("click", () => {
   editModalNameInput.value = profileName.textContent;
   editModalDescriptionInput.value = profileDescription.textContent;
 
-  // resetValidation(editFormElement, settings);
+  resetValidation(editFormElement, settings);
   // resetValidation(editFormElement, [editModalNameInput, editModalDescriptionInput], settings)
 
   openModal(editProfileModal);
