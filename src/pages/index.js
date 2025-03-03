@@ -79,13 +79,13 @@ api.getAppInfo()
     });
     profileName.textContent = userInfo.name;
     profileDescription.textContent = userInfo.about;
-    // profileImage.src = userInfo.avatar;
+    profileImage.src = userInfo.avatar;
 
-    // if (userInfo.avatar) {
-    //   profileImage.src = userInfo.avatar;
-    // } else {
-    //   profileImage.src = "../src/images/avatar.jpg";
-    // }
+    if (userInfo.avatar) {
+      profileImage.src = userInfo.avatar;
+    } else {
+      profileImage.src = "../src/images/avatar.jpg";
+    }
   })
   .catch(console.error);
 
