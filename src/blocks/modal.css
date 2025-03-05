@@ -89,7 +89,11 @@
   font-weight: 500;
   font-size: 32px;
   line-height: 1;
+  font-family: "Poppins", Arial, sans-serif;
+
 }
+
+
 
 .modal__label {
   display: flex;
@@ -99,6 +103,7 @@
   font-weight: 500;
   font-size: 16px;
   line-height: 17.6px;
+  font-family: Poppins, Arial, Helvetica, sans-serif;
 }
 
 .modal__submit-button {
@@ -107,6 +112,10 @@
   background-color: rgba(33, 33, 33, 1);
   color: rgba(252, 245, 229, 1);
   border-radius: 8px;
+  font-family: "Poppins", Arial, sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 16px;
 }
 
 .modal__submit-button:hover {
@@ -116,6 +125,7 @@
 
 .modal__submit-button_disabled {
   opacity: 0.5;
+  pointer-events: none;
 }
 
 .modal__close-button {
@@ -146,6 +156,65 @@
   opacity: 1;
   cursor: pointer;
 }
+
+.modal__form-delete {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 32px;
+  font-family: Poppins, Arial, Helvetica, sans-serif;
+  font-weight: 500;
+  size: 24px;
+  line-height: 24px;
+}
+
+.modal__title-delete {
+  font-family: "Poppins", Arial, sans-serif;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 24px;
+  display: flex;
+  justify-content: center;
+}
+
+.modal__delete-button {
+  background-color: #FF6565;
+  border: none;
+  color: #212121;
+  border-radius: 8px;
+  font-family: Poppins, Arial, Helvetica, sans-serif;
+  font-weight: 500;
+  size: 16px;
+  line-height: 16px;
+}
+
+.modal__delete-button:hover {
+  background-color: rgba(255, 51, 51, 1);
+  opacity: 1;
+  color: black;
+}
+
+.modal__cancel-button {
+  background: white;
+  border: 1px solid #212121;
+  color: #212121;
+  border-radius: 8px;
+  font-family: Poppins, Arial, Helvetica, sans-serif;
+  font-weight: 500;
+  size: 16px;
+  line-height: 16px;
+}
+
+.modal__cancel-button:hover {
+  color: white;
+  background-color: rgba(33, 33, 33, 1.0);
+  opacity: 1;
+}
+
+
+
+
+
 .modal__input {
   margin: 8px 0 0;
   padding: 16px 12px;
@@ -186,9 +255,14 @@
     padding: 12px;
   }
 
-  modal__container_type_preview {
+  .modal__container_type_preview {
     max-width: 288px;
     padding: 0;
+  }
+
+  .modal__close-button_type_preview {
+    top: -35px;
+    right: 20px;
   }
 
   .modal__image {
@@ -210,6 +284,18 @@
     margin: 10px 0 34px;
   }
 
+  .modal__title-delete {
+    justify-content: space-between;
+    width: 276px;
+    height: 48px;
+    text-align: center;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+    font-family: Poppins, Arial, Helvetica, sans-serif;
+  }
+
+
   .modal__close-button {
     top: 12px;
     right: 12px;
@@ -226,5 +312,37 @@
 
   .modal__submit-button {
     width: 100%;
+  }
+
+  .modal__form-delete {
+    width: 156px;
+    height: 116px;
+    gap: 12px;
+    /* margin-left: 72px;
+    margin-right: 72px; */
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+
+  /* align-items: center;
+  justify-content: center; */
+  }
+
+  .modal__delete-button {
+    border-radius: 8px;
+    gap: 8px;
+    font-family: Poppins, Arial, Helvetica, sans-serif;
+    font-weight: 500;
+    size: 16px;
+    line-height: 16px;
+  }
+
+.modal__cancel-button {
+    margin: 12px 0;
+    font-family: Poppins, Arial, Helvetica, sans-serif;
+    font-weight: 500;
+    size: 16px;
+    line-height: 16px;
+
   }
 }
