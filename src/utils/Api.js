@@ -82,7 +82,7 @@ class Api {
     return fetch(`${this._baseUrl}/cards/${id}`, {
       method: "DELETE",
       headers: this._headers,
-    })
+    }).then(this._processResponse)
   }
 
   toggleLike (id, isLiked) {

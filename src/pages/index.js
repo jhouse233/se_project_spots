@@ -180,7 +180,6 @@ function updateEditProfileForm() {
       // disableButton(editFormElement.querySelector(settings.submitButtonSelector), settings.inactiveButtonClass)
 
     })
-    .catch(console.error)
 
 }
 // -------------------------------
