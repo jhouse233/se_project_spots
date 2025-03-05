@@ -22,9 +22,12 @@ export function handleSubmit(request, evt, loadingText = 'Saving...', inactiveBu
   request()
     .then(() => {
       evt.target.reset();
-      disableButton(submitButton, inactiveButtonClass)
+      if (inactiveButtonClass) {
+        disableButton(submitButton, inactiveButtonClass)
+      }
       // evt.target.addEventListener("input", () => enableButton(submitButton, inactiveButtonClass), { once: true})
     })
+    .catch(console.error)
     .finally(() => {
       renderLoading(false, submitButton, initialText);
     });

@@ -287,7 +287,6 @@ cardModalButton.addEventListener("click", () => {
 });
 
 avatarModalButton.addEventListener("click", () => {
-  resetValidation(avatarFormElement, settings)
   openModal(avatarModal)
 });
 
@@ -302,23 +301,8 @@ cancelModalButton.addEventListener("click", () => {
 
 
 avatarFormElement.addEventListener("submit", handleAvatarSubmit);
-// avatarFormElement.setEventListeners();
-// avatarFormElement.addEventListener("input", (evt) => {
-//   checkInputValidity(avatarFormElement, evt.target, settings)
-// })
-// avatarFormElement.addEventListener("submit", (evt) => {
-//   handleSubmit(addAvatarReq, evt, "Saving. . .", settings.inactiveButtonClass)
-// });
 editFormElement.addEventListener("submit", handleEditFormSubmit);
-// editFormElement.addEventListener("submit", (evt) => {
-//   handleSubmit(updateEditProfileForm, evt, "Saving. . . ", settings.inactiveButtonClass)
-// });
-
 deleteFormElement.addEventListener("submit", handleDeleteSubmit);
-
-// deleteFormElement.addEventListener("submit", (evt) =>
-//   handleSubmit(() => api.deleteCard(selectedCardId), evt, "Deleting...", settings.inactiveButtonClass)
-// );
 cardForm.addEventListener("submit", handleAddCardSubmit);
 
 

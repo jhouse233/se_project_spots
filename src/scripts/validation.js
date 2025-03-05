@@ -80,7 +80,7 @@ export const resetValidation = (formElement, config) => {
   // toggleButtonState(inputList, buttonElement, config);
   disableButton(buttonElement, config.inactiveButtonClass);
 
-  formElement.reset();
+  // formElement.reset();
 };
 
 
@@ -99,7 +99,7 @@ export const setEventListeners = (formElement, config) => {
       toggleButtonState(inputList, buttonElement, config);
 
       //Adding enableButton
-      enableButton(buttonElement, config.inactiveButtonClass);
+      // enableButton(buttonElement, config.inactiveButtonClass);
 
     });
   });
@@ -117,8 +117,5 @@ export const enableValidation = (config) => {
   });
 };
 
-// const avatarAddButton =
 
-// const avatarAddButton = document.querySelector(".profile__avatar-btn");
-
-enableValidation(settings);
+// enableValidation(settings);

@@ -4,16 +4,24 @@ class Api {
     this._headers = headers;
   }
 
-  getAppInfo() {
-    return Promise.all([this.getInitialCards(), this.getUserInfo()]);
-  }
-
+  // _request(endpoint, options = {}) {
+  //   const finalOptions = {
+  //     headers: this._headers,
+  //     ...options,
+  //   };
+  //   const url = `${this._baseUrl}${endpoint}`;
+  //   return fetch(url, finalOptions).then(this._processResponse);
+  // }
 
   _processResponse(res){
     if(res.ok){
       return res.json();
     }
     Promise.reject(`Error: ${res.status}`);
+  }
+
+  getAppInfo() {
+    return Promise.all([this.getInitialCards(), this.getUserInfo()]);
   }
 
   getUserInfo() {
@@ -33,7 +41,8 @@ class Api {
         name,
         link,
       }),
-    }).then(this._processResponse)
+    })
+    .then(this._processResponse)
   }
 
   getInitialCards() {
@@ -52,7 +61,8 @@ class Api {
         name,
         about,
       }),
-    }).then(this._processResponse)
+    })
+    .then(this._processResponse)
   }
 
   editUserAvatar({ avatar }) {
@@ -62,7 +72,8 @@ class Api {
       body: JSON.stringify({
         avatar
       }),
-    }).then(this._processResponse)
+    })
+    .then(this._processResponse)
   }
 
 
@@ -79,7 +90,8 @@ class Api {
     return fetch(`${this._baseUrl}/cards/${id}/likes`, {
       method: method,
       headers: this._headers,
-    }).then(this._processResponse)
+    })
+    .then(this._processResponse)
   }
 
 }
