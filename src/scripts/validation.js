@@ -38,12 +38,16 @@ export const hasInvalidInput = (inputList) => {
 };
 
 export function disableButton(buttonElement, inactiveButtonClass) {
-  if(!buttonElement) return;
+  // if(!buttonElement) return;
   buttonElement.classList.add(inactiveButtonClass)
   buttonElement.disabled = true;
-  console.log("Button should be disabled", buttonElement);
+  // console.log("Button should be disabled", buttonElement);
 }
 
+export function enableButton(buttonElement, inactiveButtonClass) {
+  buttonElement.classList.remove(inactiveButtonClass);
+  buttonElement.disabled = false;
+}
 
 export const toggleButtonState = (inputList, buttonElement, config) => {
   // console.log(hasInvalidInput(inputList));
@@ -81,6 +85,7 @@ export const resetValidation = (formElement, config) => {
 
 
 
+
 export const setEventListeners = (formElement, config) => {
   const inputList = Array.from(formElement.querySelectorAll(config.inputSelector));
   const buttonElement = formElement.querySelector(config.submitButtonSelector);
@@ -92,6 +97,10 @@ export const setEventListeners = (formElement, config) => {
     inputElement.addEventListener("input", function () {
       checkInputValidity(formElement, inputElement, config);
       toggleButtonState(inputList, buttonElement, config);
+
+      //Adding enableButton
+      enableButton(buttonElement, config.inactiveButtonClass);
+
     });
   });
 
@@ -108,4 +117,8 @@ export const enableValidation = (config) => {
   });
 };
 
-// enableValidation(settings);
+// const avatarAddButton =
+
+// const avatarAddButton = document.querySelector(".profile__avatar-btn");
+
+enableValidation(settings);

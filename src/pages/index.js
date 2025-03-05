@@ -1,7 +1,7 @@
-import { enableValidation, settings, resetValidation, disableButton } from "../scripts/validation.js";
+import { enableValidation, settings, resetValidation, disableButton, enableButton, checkInputValidity, toggleButtonState } from "../scripts/validation.js";
 import "./index.css";
 import Api from "../utils/Api.js";
-import { handleSubmit, renderLoading } from "../utils/helpers.js";
+import { handleSubmit, renderLoading, submitButton } from "../utils/helpers.js";
 
 
 const initialCards = [
@@ -89,22 +89,6 @@ api.getAppInfo()
   })
   .catch(console.error);
 
-
-// api
-//   .getInitialCards()
-//   .then((cards) => {
-//     cards.forEach((item) => {
-//       renderCard(item, "append");
-//     });
-//   })
-//   .catch(console.error);
-
-  // Iterates over Initial Card Array
-// initialCards.forEach((item) => {
-//   renderCard(item, "append");
-// });
-
-
 // Connects the individual parts of the card elements to the template
 function getCardElement(data){
   const cardElement = cardTemplate.content
@@ -151,6 +135,10 @@ function openModal(modal) {
 function closeModal(modal) {
   modal.classList.remove("modal_opened");
   document.removeEventListener("keydown", handleEscapeKey);
+
+  // Adding enableButton here
+  const submitButton = modal.querySelector(settings.submitButtonSelector)
+  if (submitButton) enableButton(submitButton, settings.inactiveButtonClass)
 }
 
 // Escape Key Close
@@ -192,7 +180,6 @@ function updateEditProfileForm() {
       // disableButton(editFormElement.querySelector(settings.submitButtonSelector), settings.inactiveButtonClass)
 
     })
-    // .then(() => closeModal(editProfileModal));
     .catch(console.error)
 
 }
@@ -224,7 +211,6 @@ function addAvatarReq(){
     })
 
 }
-
 // - - - - - - - -- - - - - - - -
 
 // Delete - - - - - - - - -
@@ -234,17 +220,41 @@ function handleDeleteCard(cardElement, cardId) {
   selectedCardId = cardId;
   openModal(deleteModal);
 }
-function handleDeleteSubmit(evt) {
-  handleSubmit(addDeleteReq, evt, "Deleting. . . ");
-}
+// function handleDeleteSubmit(evt) {
+//   handleSubmit(addDeleteReq, evt, "Deleting. . . ");
+// }
 
-function addDeleteReq() {
-  return api.deleteCard(selectedCardId)
-    .then(() =>{
+function handleDeleteSubmit(evt) {
+  evt.preventDefault();
+
+  const submitButton = evt.submitter;
+  if (!submitButton) return;
+
+  renderLoading(true, submitButton, "Deleting...");
+
+  api.deleteCard(selectedCardId)
+    .then(() => {
       selectedCard.remove();
       closeModal(deleteModal);
+
+
+      enableButton(submitButton, settings.inactiveButtonClass);
     })
+    .catch(console.error)
+    .finally(() => {
+      renderLoading(false, submitButton, "Delete");
+    });
 }
+
+// function addDeleteReq() {
+
+//   return api.deleteCard(selectedCardId)
+//     .then(() =>{
+//       selectedCard.remove();
+//       closeModal(deleteModal);
+//       // enableButton(settings.inactiveButtonClass)
+//     })
+// }
 // - - - - - - - - - - - - - - - - - -
 
 
@@ -292,16 +302,24 @@ cancelModalButton.addEventListener("click", () => {
 
 
 avatarFormElement.addEventListener("submit", handleAvatarSubmit);
+// avatarFormElement.setEventListeners();
+// avatarFormElement.addEventListener("input", (evt) => {
+//   checkInputValidity(avatarFormElement, evt.target, settings)
+// })
 // avatarFormElement.addEventListener("submit", (evt) => {
 //   handleSubmit(addAvatarReq, evt, "Saving. . .", settings.inactiveButtonClass)
 // });
-
 editFormElement.addEventListener("submit", handleEditFormSubmit);
 // editFormElement.addEventListener("submit", (evt) => {
 //   handleSubmit(updateEditProfileForm, evt, "Saving. . . ", settings.inactiveButtonClass)
 // });
 
 deleteFormElement.addEventListener("submit", handleDeleteSubmit);
+
+// deleteFormElement.addEventListener("submit", (evt) =>
+//   handleSubmit(() => api.deleteCard(selectedCardId), evt, "Deleting...", settings.inactiveButtonClass)
+// );
 cardForm.addEventListener("submit", handleAddCardSubmit);
+
 
 enableValidation(settings);

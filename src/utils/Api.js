@@ -33,24 +33,14 @@ class Api {
         name,
         link,
       }),
-    }).then((res) => {
-      if (res.ok) {
-        return res.json();
-      }
-      return Promise.reject(`Error: ${res.status}`);
-    });
+    }).then(this._processResponse)
   }
 
   getInitialCards() {
     return fetch(`${this._baseUrl}/cards`, {
       headers: this._headers,
     })
-    .then((res) => {
-      if (res.ok) {
-        return res.json();
-      }
-      return Promise.reject(`Error: ${res.status}`);
-    });
+    .then(this._processResponse)
   }
 
   editUserInfo({ name, about }) {
@@ -89,12 +79,7 @@ class Api {
     return fetch(`${this._baseUrl}/cards/${id}/likes`, {
       method: method,
       headers: this._headers,
-    }).then((res) => {
-      if (res.ok) {
-        return res.json();
-      }
-      return Promise.reject(`Error: ${res.status}`);
-    });
+    }).then(this._processResponse)
   }
 
 }
