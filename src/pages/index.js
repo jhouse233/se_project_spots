@@ -230,7 +230,7 @@ function handleDeleteSubmit(evt) {
   const submitButton = evt.submitter;
   if (!submitButton) return;
 
-  renderLoading(true, submitButton, "Deleting...");
+  renderLoading(true, submitButton, "Delete", "Deleting...");
 
   api.deleteCard(selectedCardId)
     .then(() => {
@@ -240,9 +240,9 @@ function handleDeleteSubmit(evt) {
 
       enableButton(submitButton, settings.inactiveButtonClass);
     })
-    .catch(console.error)
+    // .catch(console.error)
     .finally(() => {
-      renderLoading(false, submitButton, "Delete");
+      renderLoading(false, submitButton, "Delete", "Deleting");
     });
 }
 
