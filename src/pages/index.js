@@ -178,9 +178,7 @@ function updateEditProfileForm() {
       profileDescription.textContent = userInfo.about;
       closeModal(editProfileModal);
       // disableButton(editFormElement.querySelector(settings.submitButtonSelector), settings.inactiveButtonClass)
-
     })
-
 }
 // -------------------------------
 
